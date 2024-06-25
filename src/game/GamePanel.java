@@ -1,8 +1,6 @@
 package game;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -21,8 +19,7 @@ public class GamePanel extends JPanel{
 	
 	// ボーダーライン
 	Border border = BorderFactory.createLineBorder(Color.black);
-	// Listener
-	MyButtonListener myButtonListener;
+	
 	// Constructor
 	public GamePanel() {
 		this.setLayout(null);
@@ -36,31 +33,6 @@ public class GamePanel extends JPanel{
 		
 		// dicePanel サイコロ結果表示エリア
 		dicePanel= new DicePanel();
-		//this.add(dicePanel);
-		
-		// ボタン
-		// サイコロ振りボタン
-		rollDiceButton = new JButton("サイコロを振る");
-		myButtonListener = new MyButtonListener();
-		rollDiceButton.addActionListener(myButtonListener);
-		JPanel buttonArea = new JPanel();
-		buttonArea.setBounds(0, 300, 400, 50);
-		buttonArea.setBackground(Color.red);
-		buttonArea.add(rollDiceButton);
-		dicePanel.add(buttonArea);
-		buttonArea.setBorder(border);
 		this.add(dicePanel);
-	}
-	
-	// 内部クラス(ボタン制御)
-	private class MyButtonListener implements ActionListener {
-		@Override
-		// 押下時処理
-		public void actionPerformed (ActionEvent e) {
-			if(e.getSource() == rollDiceButton) {
-				// サイコロ処理記述
-				System.out.println("rollDiceButton");
-			}
-		}
 	}
 }
