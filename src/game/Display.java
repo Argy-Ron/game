@@ -20,6 +20,7 @@ public class Display extends JFrame {
 		// Panel
 		TitlePanel titlePanel;
 		GamePanel gamePanel;
+		Test testPanel;
 		
 		// Constructor
 		Display(){
@@ -39,6 +40,7 @@ public class Display extends JFrame {
 		public void setComponents() {
 			titlePanel.setComponents();
 			gamePanel.setComponents();
+			testPanel.setComponents();
 		}
 		
 		public void setPanels() {
@@ -46,6 +48,8 @@ public class Display extends JFrame {
 			this.add(titlePanel, "タイトル画面");
 			gamePanel = new GamePanel();
 			this.add(gamePanel, "ゲーム画面");
+			testPanel = new Test();
+			this.add(testPanel, "テスト画面");
 		}
 		
 		public void setScreenMode(ScreenMode s) {
@@ -57,6 +61,9 @@ public class Display extends JFrame {
 			case GAME:
 				layout.show(this.getContentPane(), "ゲーム画面");
 				gamePanel.requestFocus();
+				break;
+			case TEST:
+				layout.show(this.getContentPane(), "テスト画面");
 				break;
 			}
 		}

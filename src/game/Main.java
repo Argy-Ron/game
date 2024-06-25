@@ -8,7 +8,7 @@ public class Main {
 		disp = new Display();
 		disp.setPanels();
 		disp.setComponents();
-		disp.setScreenMode(s);
+		disp.setScreenMode(ScreenMode.GAME);
 		disp.setVisible(true);
 		System.out.println(s);
 	}
